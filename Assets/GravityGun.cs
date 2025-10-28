@@ -13,8 +13,8 @@ public class GravityGun : MonoBehaviour
     [Tooltip("How quickly the held object moves and rotates to match the hold position and camera orientation. Higher = tighter follow.")]
     public float holdSmoothness = 12f;
 
-    [Tooltip("Force (as velocity change) applied to the object when thrown with the right mouse button.")]
-    public float throwSpeed = 12f;
+    [Tooltip("Impulse strength applied to the object when thrown with the right mouse button (mass affects resulting speed).")]
+    public float throwImpulse = 20f;
 
     [Tooltip("Short delay (in seconds) after throwing before new objects can be picked up. Prevents accidental re-grabs.")]
     public float throwCooldown = 0.15f;
@@ -142,7 +142,7 @@ public class GravityGun : MonoBehaviour
         Drop();                // fully release it
 
         rb.velocity = Vector3.zero;
-        rb.AddForce(transform.forward * throwSpeed, ForceMode.VelocityChange);
+        rb.AddForce(transform.forward * throwImpulse, ForceMode.Impulse);
     }
 
 
