@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
@@ -45,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump"))
             jumpPressed = true;
+
+        // reload scene
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FixedUpdate()
