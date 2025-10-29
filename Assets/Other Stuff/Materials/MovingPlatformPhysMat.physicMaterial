@@ -6,7 +6,7 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HugeFriction
+  m_Name: MovingPlatformPhysMat
   dynamicFriction: 4
   staticFriction: 4
   bounciness: 0

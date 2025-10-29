@@ -175,14 +175,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetAirJumps(int i)
     {
-        maxAirJumps = Mathf.Max(0, i);
+        
         remainingAirJumps = Mathf.Clamp(remainingAirJumps, 0, maxAirJumps);
         UpdateJumpsText();
     }
 
     public void AddAirJumps(int i)
     {
-        maxAirJumps = Mathf.Max(0, maxAirJumps + i);
+        
         remainingAirJumps = Mathf.Clamp(remainingAirJumps + i, 0, maxAirJumps);
         UpdateJumpsText();
     }

@@ -15,9 +15,9 @@ public class Checkpoint : MonoBehaviour
         allCheckpoints = GameObject.FindObjectsOfType<Checkpoint>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
             KillPlayer.playerRespawnPoint = transform.position + Vector3.up * spawnOffset;
             
